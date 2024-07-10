@@ -1,11 +1,15 @@
 from prettytable import PrettyTable
+from abc import abstractmethod, ABC
 
-class OutputView:
+
+class OutputView(ABC):
+    @abstractmethod
     def create_table(self, data):
-        raise NotImplementedError
+        pass
 
+    @abstractmethod
     def create_row(self, data):
-        raise NotImplementedError
+        pass
 
 
 class AddressBookView(OutputView):
